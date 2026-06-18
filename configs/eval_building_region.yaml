@@ -1,0 +1,30 @@
+# Building-region evaluation configuration
+
+evaluation:
+  checkpoint: null  # path to best_model.pth
+  encoder: vitl
+  device: auto
+
+data:
+  eval_csv: null
+  data_root: data/
+  building_footprint_dir: null  # directory with per-patch building footprint files
+  nodata_threshold: -9990
+  min_building_pixel_ratio: 0.01
+
+output:
+  save_dir: null
+  save_predictions: false
+
+metrics:
+  - mae_building
+  - rmse_building
+  - r2_building
+  - le90_building
+  - building_pixel_ratio
+
+report_format:
+  mae_building: median ± NMAD
+  rmse_building: median ± std
+  r2_building: median ± std
+  le90_building: median

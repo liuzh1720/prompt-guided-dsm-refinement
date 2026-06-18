@@ -1,0 +1,34 @@
+# Conda environment for prompt-guided-dsm-refinement
+# Create: conda env create -f environment.yml
+# Activate: conda activate dsm-refine
+
+name: dsm-refine
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  # Core deep learning
+  - pytorch>=2.0
+  - torchvision
+  # Geospatial
+  - rasterio>=1.3
+  - geopandas>=0.14
+  - fiona
+  - pyproj
+  # Data processing
+  - numpy>=1.24
+  - pandas>=2.0
+  - scipy
+  - opencv>=4.8
+  - scikit-learn
+  # Visualization
+  - matplotlib>=3.7
+  # Utilities
+  - pyyaml>=6.0
+  - tqdm
+  - pip:
+    # PromptDA is installed separately, see docs/PROMPTDA_VERSION.md

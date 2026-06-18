@@ -1,0 +1,31 @@
+# Whole-patch evaluation configuration
+
+evaluation:
+  checkpoint: null  # path to best_model.pth
+  model_type: proposed  # proposed or baseline
+  promptda_checkpoint: null  # required when model_type=baseline
+  encoder: vitl
+  device: auto  # auto, cuda, cpu
+
+data:
+  eval_csv: null  # path to eval CSV (e.g., splits/HK_eval.csv)
+  data_root: data/
+  nodata_threshold: -9990
+
+output:
+  save_dir: null  # results directory
+  save_predictions: false
+  save_figures: false
+
+metrics:
+  - mae
+  - rmse
+  - r2
+  - le90
+  - valid_ratio
+
+report_format:
+  mae: median ± NMAD
+  rmse: median ± std
+  r2: median ± std
+  le90: median

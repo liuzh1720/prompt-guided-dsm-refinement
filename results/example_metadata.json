@@ -1,0 +1,15 @@
+{
+  "experiment": "hk_only",
+  "model_type": "proposed",
+  "checkpoint": "training_outputs/hk_only/best_model.pth",
+  "checkpoint_hash": null,
+  "eval_csv": "splits/HK_eval.csv",
+  "eval_city": "HK",
+  "patch_count": 72,
+  "device": "cuda",
+  "promptda_version": "unknown (no git metadata)",
+  "code_version": "v1.0.0",
+  "timestamp": "2026-06-18T00:00:00Z",
+  "metric_implementation": "evaluation/whole_patch/evaluate.py",
+  "notes": "Example metadata structure. Fill with actual values after running evaluation."
+}

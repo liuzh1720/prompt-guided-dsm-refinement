@@ -1,0 +1,70 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*.so
+
+# Distributions
+*.egg-info/
+dist/
+build/
+
+# Model checkpoints (download separately)
+*.pth
+*.ckpt
+checkpoints/
+
+# Original remote sensing data (download separately)
+data/**
+DATA/**
+
+# Generated predictions (large files)
+*_pred.tif
+*_error.tif
+*_pred.png
+*_error.png
+*_comparison.png
+pred_only_tif/
+pred_only_png/
+error_only_tif/
+error_only_png/
+comparison_figures/
+gt_only_png/
+rgb_only_png/
+prompt_only_png/
+building_mask_png/
+building_mask_tif/
+building_error_only_png/
+building_error_only_tif/
+
+# Training outputs (except tracked metadata)
+training_outputs/
+evaluation_outputs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Archives (backup zips for external hosting)
+*.zip
+
+# Conda
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Exception: tracked results (metrics + metadata only)
+!results/**/*.csv
+!results/**/*.json
+!results/**/*.yaml
+!results/**/*.md
+
+# Exception: example data
+!examples/**

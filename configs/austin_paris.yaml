@@ -1,0 +1,40 @@
+# Austin + Paris mixed training configuration
+
+experiment: austin_paris
+random_seed: 42
+
+data:
+  train_csv: splits/Austin_Paris_train.csv
+  data_root: data/
+
+training:
+  batch_size: 1
+  num_workers: 0
+  num_epochs: 40
+  val_ratio_from_train: 0.10
+  early_stopping_patience: 8
+  nodata_threshold: -9990
+
+optimizer:
+  name: adamw
+  lr: 1.0e-5
+  weight_decay: 1.0e-4
+
+scheduler:
+  name: reduce_on_plateau
+  mode: min
+  factor: 0.5
+  patience: 3
+
+model:
+  name: promptda
+  encoder: vitl
+  freeze_strategy:
+    trainable_prefix: depth_head
+
+loss:
+  name: masked_l1
+  nodata_threshold: -9990
+
+output:
+  save_dir: training_outputs/mixed/austin_paris

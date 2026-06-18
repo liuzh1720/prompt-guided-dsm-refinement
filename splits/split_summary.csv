@@ -1,0 +1,7 @@
+﻿group,train_count,eval_count,total_count,eval_seen_count,eval_unseen_city,eval_unseen_count,eval_all_count,note
+HK,139,72,211,,,,,HK uses existing split csv
+Austin,311,78,389,,,,,Random split
+Paris,136,34,170,,,,,Random split
+HK_Austin,450,,,150,Paris,34,184,Mixed training uses only training groups from two cities
+HK_Paris,275,,,106,Austin,78,184,Mixed training uses only training groups from two cities
+Austin_Paris,447,,,112,HK,72,184,Mixed training uses only training groups from two cities
