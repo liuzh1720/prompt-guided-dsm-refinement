@@ -139,7 +139,6 @@ dependencies:
       - opencv-python==4.9.0.80
       - orjson==3.11.8
       - packaging==24.2
-      - promptda==1.0
       - propcache==0.4.1
       - pydantic==2.13.2
       - pydantic-core==2.46.2

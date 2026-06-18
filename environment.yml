@@ -5,30 +5,36 @@
 name: dsm-refine
 channels:
   - pytorch
+  - nvidia
   - conda-forge
   - defaults
 
 dependencies:
   - python=3.10
-  - pip
   # Core deep learning
-  - pytorch>=2.0
-  - torchvision
+  - pytorch::pytorch>=2.0
+  - pytorch::torchvision
+  # GPU support: after creating environment, run:
+  #   nvidia-smi  (check CUDA version)
+  #   conda install pytorch-cuda=11.8 -c pytorch -c nvidia  (for CUDA 11.x)
+  #   conda install pytorch-cuda=12.1 -c pytorch -c nvidia  (for CUDA 12.x)
   # Geospatial
-  - rasterio>=1.3
-  - geopandas>=0.14
+  - conda-forge::rasterio>=1.3
+  - conda-forge::geopandas>=0.14
   - fiona
   - pyproj
   # Data processing
   - numpy>=1.24
   - pandas>=2.0
   - scipy
-  - opencv>=4.8
+  # opencv via pip to avoid gdk-pixbuf Windows locale bug
   - scikit-learn
   # Visualization
-  - matplotlib>=3.7
   # Utilities
   - pyyaml>=6.0
   - tqdm
+  - pip
   - pip:
-    # PromptDA is installed separately, see docs/PROMPTDA_VERSION.md
+    - opencv-python>=4.8
+    - matplotlib>=3.7
+    - huggingface_hub
