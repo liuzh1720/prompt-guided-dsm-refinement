@@ -103,8 +103,8 @@ def main():
     cfg = load_config(args.config)
 
     # --- paths ---
-    data_root = Path(args.data_root)
-    train_csv = data_root / cfg["data"]["train_csv"]
+    data_root = Path(args.data_root) if args.data_root else Path(".")
+    train_csv = Path(cfg["data"]["train_csv"])  # relative to project root, not data_root
     output_dir = Path(args.output_dir) if args.output_dir else Path(cfg["output"]["save_dir"])
     output_dir.mkdir(parents=True, exist_ok=True)
 

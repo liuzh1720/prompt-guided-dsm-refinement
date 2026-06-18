@@ -6,7 +6,7 @@ random_seed: 42
 
 data:
   train_csv: splits/HK_train.csv
-  data_root: data/  # base path for relative paths in CSV
+  data_root: null  # CSV path is relative to project root; data_root applies to file paths inside CSV only
 
 training:
   batch_size: 1
